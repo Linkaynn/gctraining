@@ -1,0 +1,83 @@
+[
+  {
+    "id": "ASDF1231",
+    "name": "Ejercicio 1",
+    "difficulty": 3,
+    "explanation": [
+      "Este es el primer punto de la explicación",
+      "Continuaría con el segundo",
+      "Finalizando con el tercero"
+    ],
+    "equipment": [
+      "Cinta de fuerza",
+      "Comba"
+    ],
+    "tags": [
+      "brazos",
+      "piernas",
+      "gluteos",
+      "dorsal",
+      "fuerza",
+      "resistencia"
+    ],
+    "related": []
+  },
+  {
+    "id": "ASDF1232",
+    "name": "Ejercicio 2",
+    "difficulty": 1,
+    "explanation": [
+      "Este solo tiene 1 punto de explicación"
+    ],
+    "equipment": [
+      "Saco de boxeo",
+      "Traste de piernas"
+    ],
+    "tags": [
+      "brazos",
+      "dorsal",
+      "fuerza",
+      "resistencia"
+    ],
+    "related": []
+  },
+  {
+    "id": "ASDF1233",
+    "name": "Flexiones",
+    "difficulty": 4,
+    "explanation": [],
+    "equipment": [],
+    "tags": [
+      "brazos",
+      "fuerza",
+      "resistencia"
+    ],
+    "related": []
+  },
+  {
+    "id": "ASDF1234",
+    "name": "Abdominales",
+    "difficulty": 4,
+    "explanation": [],
+    "equipment": [],
+    "tags": [
+      "brazos",
+      "fuerza",
+      "resistencia"
+    ],
+    "related": []
+  },
+  {
+    "id": "ASDF1235",
+    "name": "Flexiones con traste en el dorsal",
+    "difficulty": 4,
+    "explanation": [],
+    "equipment": ["Traste"],
+    "tags": [
+      "brazos",
+      "fuerza",
+      "resistencia"
+    ],
+    "related": ["ASDF1233"]
+  }
+]
