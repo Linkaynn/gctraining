@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gctraining/store/exercises_store.dart';
 import 'package:gctraining/ui/pages/all_exercises_page_widget.dart';
+import 'package:gctraining/ui/pages/exercises_page_widget.dart';
 import 'package:gctraining/ui/pages/splash_screen_page_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,11 @@ class _GCTrainingState extends State<GCTraining> {
             title: 'GCTraining',
             debugShowCheckedModeBanner: false,
             initialRoute: 'loading',
-            routes: {'home': (_) => AllExercisesPageWidget(), 'loading': (_) => SplashScreenPageWidget()},
+            routes: {
+              'home': (_) => AllExercisesPageWidget(),
+              'exercises': (_) => ExercisesPageWidget(),
+              'loading': (_) => SplashScreenPageWidget()
+            },
           );
         });
   }

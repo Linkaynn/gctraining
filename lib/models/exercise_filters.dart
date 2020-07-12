@@ -2,6 +2,7 @@ import 'package:gctraining/models/exercise.dart';
 
 class ExerciseFilters {
   List<String> tags = [];
+  int amount = 0;
 
   List<Exercise> filter(List<Exercise> exercises) {
     return exercises.where((exercise) {

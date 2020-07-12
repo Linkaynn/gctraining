@@ -26,6 +26,12 @@ class _SplashScreenPageWidgetState extends State<SplashScreenPageWidget> {
       exercisesStore.filters.tags = tags.split(',');
     }
 
+    String amount = MSharedPreferences.getString(MSharedPreferencesKeys.AMOUNT);
+
+    if (amount != null) {
+      exercisesStore.filters.amount = int.parse(amount);
+    }
+
     exercisesStore.filter();
 
     Navigator.pushReplacementNamed(context, 'home');

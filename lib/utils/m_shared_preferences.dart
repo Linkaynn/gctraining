@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class MSharedPreferencesKeys {
   static const TAGS = 'TAGS';
+  static const AMOUNT = 'AMOUNT';
 }
 
 class MSharedPreferences {
