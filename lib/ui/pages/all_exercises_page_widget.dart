@@ -9,6 +9,7 @@ import 'package:gctraining/ui/atomic/atoms/texts/p3.dart';
 import 'package:gctraining/ui/atomic/atoms/texts/p4.dart';
 import 'package:gctraining/ui/atomic/atoms/texts/t3.dart';
 import 'package:gctraining/ui/widgets/exercise_widget.dart';
+import 'package:gctraining/utils/m_shared_preferences.dart';
 import 'package:provider/provider.dart';
 
 class AllExercisesPageWidget extends StatefulWidget {
@@ -22,6 +23,8 @@ class _AllExercisesPageWidgetState extends State<AllExercisesPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (!MSharedPreferences.initializated()) return Container();
+
     ExercisesStore exercisesStore = Provider.of<ExercisesStore>(context);
 
     return SafeArea(

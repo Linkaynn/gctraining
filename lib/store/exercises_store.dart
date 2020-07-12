@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:gctraining/models/exercise.dart';
 import 'package:gctraining/models/exercise_filters.dart';
 import 'package:gctraining/store/m_store.dart';
+import 'package:gctraining/utils/m_shared_preferences.dart';
 import 'package:mobx/mobx.dart';
 
 part 'exercises_store.g.dart';
@@ -35,6 +36,8 @@ abstract class _ExercisesStore extends MStore with Store {
       this.exercises.add(exercise);
     }
 
+    this.exercises.sort((a, b) => a.name.compareTo(b.name));
+
     this.filter();
 
     this.isLoading = false;
@@ -51,6 +54,8 @@ abstract class _ExercisesStore extends MStore with Store {
     if (!filters.tags.contains(tag)) {
       filters.tags.add(tag);
       this.filter();
+
+      this._saveTags();
     }
   }
 
@@ -58,5 +63,11 @@ abstract class _ExercisesStore extends MStore with Store {
   void removeTagFilter(String tag) {
     filters.tags.remove(tag);
     this.filter();
+
+    this._saveTags();
+  }
+
+  void _saveTags() {
+    MSharedPreferences.setString(MSharedPreferencesKeys.TAGS, filters.tags.join(','));
   }
 }

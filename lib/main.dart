@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:gctraining/store/exercises_store.dart';
 import 'package:gctraining/ui/pages/all_exercises_page_widget.dart';
+import 'package:gctraining/ui/pages/splash_screen_page_widget.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(GCTraining());
 }
 
-class GCTraining extends StatelessWidget {
+class GCTraining extends StatefulWidget {
+  @override
+  _GCTrainingState createState() => _GCTrainingState();
+}
+
+class _GCTrainingState extends State<GCTraining> {
   final ExercisesStore _exercisesStore = ExercisesStore();
 
-  GCTraining() {
-    WidgetsFlutterBinding.ensureInitialized();
-    _exercisesStore.init();
+  @override
+  void initState() {
+    super.initState();
+    this.init();
+  }
+
+  Future<void> init() async {
+    await _exercisesStore.init();
   }
 
   @override
@@ -23,8 +34,8 @@ class GCTraining extends StatelessWidget {
           return MaterialApp(
             title: 'GCTraining',
             debugShowCheckedModeBanner: false,
-            initialRoute: '/',
-            routes: {'/': (_) => AllExercisesPageWidget()},
+            initialRoute: 'loading',
+            routes: {'home': (_) => AllExercisesPageWidget(), 'loading': (_) => SplashScreenPageWidget()},
           );
         });
   }
